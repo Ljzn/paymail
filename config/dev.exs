@@ -7,9 +7,13 @@ import Config
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
 config :paymail, PaymailWeb.Endpoint,
-  # Binding to loopback ipv4 address prevents access from other machines.
-  # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {127, 0, 0, 1}, port: 4000],
+  https: [
+    port: 443,
+    cipher_suite: :strong,
+    keyfile: "priv/cert/selfsigned_key.pem",
+    certfile: "priv/cert/selfsigned.pem",
+    verify: :verify_none
+  ],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,

@@ -1,23 +1,14 @@
 defmodule PaymailWeb.Router do
   use PaymailWeb, :router
 
-  pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_live_flash
-    plug :put_root_layout, {PaymailWeb.LayoutView, :root}
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
-  end
-
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", PaymailWeb do
-    pipe_through :browser
+    pipe_through :api
 
-    get "/", PageController, :index
+    get "/tx", ApiController, :deposits
   end
 
   # Other scopes may use custom stacks.
@@ -25,5 +16,12 @@ defmodule PaymailWeb.Router do
     pipe_through :api
 
     get "/bsvalias", ApiController, :bsvalias
+  end
+
+  scope "/api/v1/bsvalias", PaymailWeb do
+    pipe_through :api
+
+    get "/address/:paymail", ApiController, :address
+    post "/receive-rawtx/:paymail", ApiController, :receive_rawtx
   end
 end
