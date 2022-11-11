@@ -17,7 +17,6 @@ config :paymail, PaymailWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "DQWmZTLjIVQo5PdniMgXBfxbnUo82hPzqNp4rDdWZN4eawdTi+hB/zwrZ3qnp6xJ",
   watchers: []
 
 # ## SSL Support

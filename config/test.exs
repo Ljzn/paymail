@@ -4,7 +4,6 @@ import Config
 # you can enable the server option below.
 config :paymail, PaymailWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "yClm1VmQSc0ZnYk3WQCKC2QWIXJA/cdullk3KZA10+HTLT6zasGffqA5Qg+eKoYH",
   server: false
 
 # Print only warnings and errors during test

@@ -36,7 +36,7 @@ defmodule PaymailWeb.ApiControllerTest do
     assert body["error"]
   end
 
-  test "POST /api/v1/bsvalias/receive-rawtx/:paymail", %{conn: conn} do
+  test "POST /api/v1/bsvalias/receive-rawtx/:paymail & GET /tx", %{conn: conn} do
     Paymail.DB.clear()
 
     conn =
@@ -49,9 +49,7 @@ defmodule PaymailWeb.ApiControllerTest do
 
     body = json_response(conn, 200)
     assert body["txid"] == "ddc76b3f5aeda0e7eaec84c499a8cd8ed53fb0b71a14f05a358aeac163c86b25"
-  end
 
-  test "GET /tx", %{conn: conn} do
     st = DateTime.utc_now() |> DateTime.add(-100) |> DateTime.to_iso8601()
     et = DateTime.utc_now() |> DateTime.add(100) |> DateTime.to_iso8601()
     conn = get(conn, "/tx?start_timestamp=#{st}&end_timestamp=#{et}")
