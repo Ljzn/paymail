@@ -21,7 +21,7 @@ defmodule PaymailWeb.Router do
   scope "/api/v1/bsvalias", PaymailWeb do
     pipe_through :api
 
-    get "/address/:paymail", ApiController, :address
+    post "/address/:paymail", ApiController, :address
     post "/receive-rawtx/:paymail", ApiController, :receive_rawtx
   end
 end

@@ -8,6 +8,7 @@ defmodule Paymail.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      Paymail.DB,
       # Start the Telemetry supervisor
       PaymailWeb.Telemetry,
       # Start the PubSub system
