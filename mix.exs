@@ -20,7 +20,7 @@ defmodule Paymail.MixProject do
   def application do
     [
       mod: {Paymail.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :inets]
     ]
   end
 
@@ -43,7 +43,8 @@ defmodule Paymail.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:block_keys, "~> 0.1.10"},
-      {:cubdb, "~> 2.0.1"}
+      {:cubdb, "~> 2.0.1"},
+      {:certifi, "~> 2.11"}
     ]
   end
 
