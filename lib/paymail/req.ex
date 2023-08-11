@@ -1,5 +1,7 @@
 defmodule Paymail.Req do
   def get(url, headers \\ [], opts \\ []) do
+    headers = bins_to_lists(headers)
+
     {:ok,
      {
        {_, status, _},
@@ -20,6 +22,8 @@ defmodule Paymail.Req do
   end
 
   def post(url, body, headers \\ [], opts \\ []) do
+    headers = bins_to_lists(headers)
+
     {:ok,
      {
        {_, status, _},
@@ -53,4 +57,10 @@ defmodule Paymail.Req do
       {:customize_hostname_check,
        [{:match_fun, :public_key.pkix_verify_hostname_match_fun(:https)}]}
     ]
+
+  defp bins_to_lists(headers) do
+    Enum.map(headers, fn {k, v} ->
+      {:erlang.binary_to_list(k), :erlang.binary_to_list(v)}
+    end)
+  end
 end

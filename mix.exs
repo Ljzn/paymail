@@ -44,7 +44,9 @@ defmodule Paymail.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:block_keys, "~> 0.1.10"},
       {:cubdb, "~> 2.0.1"},
-      {:certifi, "~> 2.11"}
+      {:certifi, "~> 2.11"},
+      {:base_58_check, "~> 1.0"},
+      {:bip0173, "~> 0.1.2"}
     ]
   end
 

@@ -1,4 +1,6 @@
 %{
+  "base_58_check": {:hex, :base_58_check, "1.0.0", "bbe527bb00ffd9c5b03abdf970aefd9ca36bd3967dcd75efa8a3c2ed1dcec154", [:mix], [], "hexpm", "06b538938722a04680210e889edaf96f4c967251218fbfbafa19ec2702ba489c"},
+  "bip0173": {:hex, :bip0173, "0.1.2", "b771e275692ed3353ecfecb38330693cbba90d2ac4a2e8fd1908a86ec7e6318f", [:mix], [], "hexpm", "6e12dfe7baacf9b4c422cae8f9cc6bbd791bf5ec3e9055fa3f418071b799b0db"},
   "block_keys": {:hex, :block_keys, "0.1.10", "1d76bed50d7fd93a1b9e42b3a1ed0b7bf4224c0bba4e4fd48e720b3ba8b1faa9", [:mix], [{:keccakf1600, "~> 2.0", [hex: :keccakf1600_otp23, repo: "hexpm", optional: false]}, {:libsecp256k1, "~> 0.1.9", [hex: :libsecp256k1, repo: "hexpm", optional: false]}], "hexpm", "db7392e0d71de8791a5df5e8bab5b94150fc9af9f0b66dfd4691d5e5cc555a22"},
   "castore": {:hex, :castore, "0.1.18", "deb5b9ab02400561b6f5708f3e7660fc35ca2d51bfc6a940d2f513f89c2975fc", [:mix], [], "hexpm", "61bbaf6452b782ef80b33cdb45701afbcf0a918a45ebe7e73f1130d661e66a06"},
   "certifi": {:hex, :certifi, "2.11.0", "5adfe37ceb8569d019f836944aeaf27f8ac391dacaf3707f570c155b7e03aaa8", [:rebar3], [], "hexpm", "9e37e0542ec3fabaa19a0734b3900dc095797fac48c40a2a9741d8ad5e3c9bb7"},

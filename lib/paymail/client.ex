@@ -1,7 +1,6 @@
 defmodule Paymail.Client do
   alias Paymail.Req
-  alias Venezia.Blockchain.Chain.BitcoinSegwit.Script
-  alias Venezia.Blockchain.Chain.BitcoinSegwit.Address
+  alias Paymail.Script
 
   @brfc_receive_tx "5f1323cddf31"
 
@@ -75,7 +74,7 @@ defmodule Paymail.Client do
     # validate pubkeyhash
     {:p2pkh, _} = Script.script_pubkey_type(pubkeyhash)
 
-    Address.from_script_pubkey(pubkeyhash, false)
+    Script.from_script_pubkey(pubkeyhash, false)
   end
 
   def send_tx(paymail, raw) do
